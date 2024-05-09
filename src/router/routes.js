@@ -65,7 +65,7 @@ const routes = [
       {
         path: "/liste_p",
         name: "liste_p",
-        component: () => import("pages/enseign/HomePage.vue"),
+        component: () => import("pages/enseign/PresencePage.vue"),
       },
     ],
   },

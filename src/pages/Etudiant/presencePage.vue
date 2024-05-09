@@ -85,6 +85,7 @@ import { useCours } from "../../stores/cours";
 import { useQuasar } from "quasar";
 import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from "vue-qrcode-reader";
 import { Result } from "postcss";
+import { usePresence } from "../../stores/presence";
 export default {
   components: { QrcodeStream },
   setup() {
@@ -92,9 +93,39 @@ export default {
 
     const result = ref("");
     const open = ref(false);
+    const $q = useQuasar();
+    const p = usePresence();
 
     function onDetect(detectedCodes) {
-      console.log(detectedCodes);
+      detectedCodes.forEach((el) => {
+        let obj = {
+          id_enseignement: JSON.parse(el.rawValue).id,
+          id_etudiant: localStorage.getItem("userId"),
+        };
+
+        console.log(obj);
+        //enregistrement presence par le store Presence et fermeture du modal
+        p.savePresence(obj).then((res) => {
+          if (res.positive) {
+            $q.notify({
+              message: "Presence signée",
+              icon: "check",
+              iconColor: "white",
+              textColor: "white",
+              color: "green",
+            });
+            open.value = false;
+          } else {
+            $q.notify({
+              message: "Presence signée",
+              icon: "error",
+              iconColor: "white",
+              textColor: "white",
+              color: "red",
+            });
+          }
+        });
+      });
       result.value = JSON.stringify(detectedCodes.map((code) => code.rawValue));
     }
 

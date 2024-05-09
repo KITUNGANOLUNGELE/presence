@@ -54,7 +54,7 @@ export default defineComponent({
         messageColor: "primary",
         spinnerColor: "blue-4",
       });
-      axios.post("http://192.168.57.107/chris/user/login/", f).then((data) => {
+      axios.post("http://localhost/chris/user/login/", f).then((data) => {
         if (data.data.role == "su") {
           localStorage.setItem("user", data.data.response.mai);
           localStorage.setItem("role", data.data.role);
