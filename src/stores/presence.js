@@ -2,7 +2,7 @@ import axios from "axios";
 import { defineStore } from "pinia";
 export const usePresence = defineStore("pr", {
   state: () => ({
-    presence: [],
+    presence: null,
   }),
   getters: {},
   actions: {
@@ -19,6 +19,13 @@ export const usePresence = defineStore("pr", {
       let f = new FormData();
       f.append("id_enseignant", id);
       let data = await axios.post("http://localhost/chris/cours/enseignant", f);
+      return data.data.response;
+    },
+    async getPresenceCours(id_enseignement) {
+      let f = new FormData();
+      f.append("id_enseignement", id_enseignement);
+      let data = await axios.post("http://localhost/chris/presence/all/", f);
+      console.log(data.data);
       return data.data.response;
     },
   },

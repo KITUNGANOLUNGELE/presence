@@ -5,7 +5,7 @@
         class="Mycard"
         v-for="item in datas"
         :key="item.nom_cours"
-        @click="onclick"
+        @click="onclick(item.id_enseignement)"
       >
         <q-card-section title="Cliquer pour voir la liste" class="text-center"
           ><b>{{ item.nom_cours }}</b>
@@ -19,13 +19,17 @@
     </div>
   </div>
   <q-dialog v-model="ouv">
-    <q-card>
+    <q-card v-for="item in infos" :key="item.nom_etudiant">
       <q-card-section class="row items-center">
         <q-avatar icon="check" color="primary" text-color="white" />
         <span class="q-ml-sm">Liste des présences</span>
       </q-card-section>
-      <q-card-section class="row items-center">
-        <!-- Affcher la list des presences -->
+      <q-card-section class="row items-center" v-if="infos != undefined">
+        {{ item.nom_etudiant }} {{ item.postnom_etudiant }}
+        {{ item.prenom_etudiant }} {{ item.date_p }}
+      </q-card-section>
+      <q-card-section class="row items-center" v-else>
+        <div>Acune presence disponible</div>
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -34,21 +38,33 @@
 <script>
 import { ref } from "vue";
 import { usePresence } from "../../stores/presence";
+import { useQuasar } from "quasar";
 export default {
   setup() {
+    let datas = ref(null);
+    let p = usePresence();
+    let $q = useQuasar();
     const ouv = ref(false);
     const infos = ref(null);
     let onclick = (id_enseignement) => {
-      ouv.value = true;
-      infos.value; //= a la liste de presence de cet enseignemnt a afficher dans le dialog
+      p.getPresenceCours(id_enseignement).then((res) => {
+        infos.value = res;
+        if (infos.value) {
+          ouv.value = true;
+        } else {
+          $q.notify({
+            message: "Enregistrer des présences",
+          });
+        }
+        console.log(infos.value);
+      });
     };
-    let datas = ref(null);
-    let p = usePresence();
+
     p.getCoursEns(localStorage.getItem("userId")).then((res) => {
       datas.value = res;
     });
     console.log(datas);
-    return { datas };
+    return { datas, ouv, infos, onclick };
   },
 };
 </script>
