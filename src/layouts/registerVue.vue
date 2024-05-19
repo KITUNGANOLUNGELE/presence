@@ -28,7 +28,7 @@
       v-model="drawer"
       bordered
       :width="200"
-      :breakpoint="500"
+      :breakpoint="900"
       show-if-above
       content-class="bg-grey-3"
     >

@@ -22,5 +22,12 @@ export const useExamen = defineStore("exam", {
       console.log(data.data);
       return data.data;
     },
+    async getExP(s) {
+      let f = new FormData();
+      f.append("id_promotion", s.id_promotion);
+      let data = await axios.post("http://localhost/chris/examen/prom/", f);
+      console.log(data.data);
+      return data.data.response;
+    },
   },
 });

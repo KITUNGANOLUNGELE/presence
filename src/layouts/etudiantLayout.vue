@@ -25,7 +25,7 @@
       v-model="drawer"
       bordered
       :width="200"
-      :breakpoint="500"
+      :breakpoint="900"
       content-class="bg-grey-3"
       show-if-above
     >
@@ -53,17 +53,17 @@ let links = [
     caption: "listes de presence",
   },
   {
-    title: "Examen",
+    title: "Examens",
     link: "et_exam",
     icon: "notifications",
     caption: "Mes cours",
   },
-  {
-    title: "Mes presences",
-    link: "section",
-    icon: "list",
-    caption: "Faire les presences",
-  },
+  // {
+  //   title: "Mes presences",
+  //   link: "section",
+  //   icon: "list",
+  //   caption: "Faire les presences",
+  // },
 ];
 export default {
   components: { EssentialLink },

@@ -79,6 +79,11 @@ const routes = [
         name: "etudiant_index",
         component: () => import("pages/Etudiant/presencePage.vue"),
       },
+      {
+        path: "",
+        name: "et_exam",
+        component: () => import("pages/Etudiant/ExamenPage.vue"),
+      },
     ],
   },
 

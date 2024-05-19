@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue';
-import { useQuasar } from 'quasar';
-import IndexPage from 'pages/IndexPage.vue';
-import FormConnection from "pages/Form/FormConnection.vue"
+import { defineComponent, ref } from "vue";
+import { useQuasar } from "quasar";
+import IndexPage from "pages/IndexPage.vue";
+import FormConnection from "pages/Form/FormConnection.vue";
 
 export default defineComponent({
   name: "MainLayout",
@@ -18,10 +18,10 @@ export default defineComponent({
   setup() {
     const ouvrir = ref(false);
     function toggle() {
-      ouvrir.value = !ouvrir.value
+      ouvrir.value = !ouvrir.value;
     }
 
-    return { ouvrir, toggle }
-  }
-})
+    return { ouvrir, toggle };
+  },
+});
 </script>

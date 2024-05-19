@@ -68,6 +68,7 @@ export default defineComponent({
           localStorage.setItem("user", data.data.response.mail);
           localStorage.setItem("userId", data.data.response.id);
           localStorage.setItem("role", data.data.role);
+          localStorage.setItem("id_prom", data.data.response.id_promotion);
           router.replace("/etudiant_vue");
         } else if (data.data.role == "surveillant") {
           localStorage.setItem("user", data.data.response.mail);
