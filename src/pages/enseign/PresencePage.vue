@@ -51,7 +51,12 @@ export default {
         if (infos.value) {
           infos.value.forEach((element) => {
             rows.value.push({
-              nom_etudiant: element.nom_etudiant,
+              nom_etudiant:
+                element.nom_etudiant +
+                " " +
+                element.postnom_etudiant +
+                " " +
+                element.prenom_etudiant,
               date_p: element.date_p,
             });
           });

@@ -54,7 +54,7 @@ export default defineComponent({
         messageColor: "primary",
         spinnerColor: "blue-4",
       });
-      axios.post("http://localhost/chris/user/login/", f).then((data) => {
+      axios.post("http://192.168.1.66/chris/user/login/", f).then((data) => {
         if (data.data.role == "su") {
           localStorage.setItem("user", data.data.response.mai);
           localStorage.setItem("role", data.data.role);
@@ -74,7 +74,7 @@ export default defineComponent({
           localStorage.setItem("user", data.data.response.mail);
           localStorage.setItem("userId", data.data.response.id);
           localStorage.setItem("role", data.data.role);
-          router.replace("/enseignant");
+          router.replace("/surveillant_vue");
         } else {
           $q.notify({
             message: data.data.message,

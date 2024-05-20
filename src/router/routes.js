@@ -86,6 +86,18 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/surveillant_vue",
+    name: "surveillant_vue",
+    component: () => import("src/layouts/surveillantLayout.vue"),
+    children: [
+      {
+        path: "",
+        name: "surv_exam",
+        component: () => import("pages/surveillant/SurvAcceuil.vue"),
+      },
+    ],
+  },
 
   // Always leave this as last one,
   // but you can also remove it

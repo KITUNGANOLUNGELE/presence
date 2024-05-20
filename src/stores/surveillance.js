@@ -20,5 +20,15 @@ export const useSurveillance = defineStore("surllance", {
       );
       return data.data;
     },
+    async GetSurvEt(s) {
+      let f = new FormData();
+      f.append("id_enseignement", s.id_enseignement);
+      f.append("id_etudiant", s.id_etudiant);
+      let data = await axios.post(
+        "http://localhost/chris/surveillance/surv/",
+        f
+      );
+      return data.data;
+    },
   },
 });

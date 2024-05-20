@@ -37,7 +37,7 @@
     <q-dialog v-model="confirm">
       <q-card>
         <q-card-section class="row items-center">
-          <VueQrious :value="JSON.stringify(valueEx)" size="300" />
+          <VueQrious :value="JSON.stringify(valueEx)" size="200" />
         </q-card-section>
       </q-card>
     </q-dialog>

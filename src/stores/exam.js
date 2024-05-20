@@ -18,14 +18,17 @@ export const useExamen = defineStore("exam", {
       f.append("date_exam", s.date);
       f.append("heure_exam", s.heure);
       f.append("id_enseignement", s.enseignement);
-      let data = await axios.post("http://localhost/chris/examen/insert/", f);
+      let data = await axios.post(
+        "http://192.168.1.66/chris/examen/insert/",
+        f
+      );
       console.log(data.data);
       return data.data;
     },
     async getExP(s) {
       let f = new FormData();
       f.append("id_promotion", s.id_promotion);
-      let data = await axios.post("http://localhost/chris/examen/prom/", f);
+      let data = await axios.post("http://192.168.1.66/chris/examen/prom/", f);
       console.log(data.data);
       return data.data.response;
     },
