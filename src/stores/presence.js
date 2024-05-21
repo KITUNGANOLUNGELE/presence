@@ -10,7 +10,10 @@ export const usePresence = defineStore("pr", {
       let f = new FormData();
       f.append("id_enseignement", s.id_enseignement);
       f.append("id_etudiant", s.id_etudiant);
-      let data = await axios.post("http://localhost/chris/presence/insert/", f);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/presence/insert/",
+        f
+      );
       console.log(data.data);
       return data.data;
     },
@@ -18,13 +21,19 @@ export const usePresence = defineStore("pr", {
     async getCoursEns(id) {
       let f = new FormData();
       f.append("id_enseignant", id);
-      let data = await axios.post("http://localhost/chris/cours/enseignant", f);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/cours/enseignant",
+        f
+      );
       return data.data.response;
     },
     async getPresenceCours(id_enseignement) {
       let f = new FormData();
       f.append("id_enseignement", id_enseignement);
-      let data = await axios.post("http://localhost/chris/presence/all/", f);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/presence/all/",
+        f
+      );
       console.log(data.data);
       return data.data.response;
     },

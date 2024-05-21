@@ -7,7 +7,9 @@ export const useOption = defineStore("prom", {
   }),
   getters: {
     async getOption() {
-      let opt = await axios.get("http://localhost/chris/option/all/");
+      let opt = await axios.get(
+        "https://gestpresence.000webhostapp.com/chris/option/all/"
+      );
       return opt.data;
     },
   },
@@ -21,7 +23,7 @@ export const useOption = defineStore("prom", {
       f.append("nom_option", s.nom_option);
       f.append("id_section", s.id_section);
       const ajouter = await axios.post(
-        "http://localhost/chris/option/insert/",
+        "https://gestpresence.000webhostapp.com/chris/option/insert/",
         f
       );
       return ajouter.data;

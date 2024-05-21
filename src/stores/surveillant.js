@@ -23,7 +23,7 @@ export const useSurveillant = defineStore("surveillant", {
       //photo
       f.append("pass", "1234");
       let data = await axios.post(
-        "http://localhost/chris/surveillant/insert/",
+        "https://gestpresence.000webhostapp.com/chris/surveillant/insert/",
         f
       );
       console.log(data.data);

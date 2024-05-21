@@ -37,57 +37,65 @@ export default {
     const coursStore = useCours();
     const $q = useQuasar();
     //get etudiant
-    axios.get("http://localhost/chris/etudiant/all/").then((res) => {
-      if (res.data.message) {
-        $q.notify({
-          message: res.data.message + "dans la table etudiant",
-          icon: "man",
-          iconColor: "white",
-          iconSize: 200,
-        });
-      } else {
-        etudiantStore.checkstate(res.data.response);
-      }
-    });
+    axios
+      .get("https://gestpresence.000webhostapp.com/chris/etudiant/all/")
+      .then((res) => {
+        if (res.data.message) {
+          $q.notify({
+            message: res.data.message + "dans la table etudiant",
+            icon: "man",
+            iconColor: "white",
+            iconSize: 200,
+          });
+        } else {
+          etudiantStore.checkstate(res.data.response);
+        }
+      });
     //get enseignant
-    axios.get("http://localhost/chris/enseignant/all/").then((res) => {
-      if (res.data.message) {
-        $q.notify({
-          message: res.data.message + " dans la table enseignant",
-          icon: "man",
-          iconColor: "white",
-          iconSize: 200,
-        });
-      } else {
-        enseignantStore.setState(res.data.response);
-      }
-    });
+    axios
+      .get("https://gestpresence.000webhostapp.com/chris/enseignant/all/")
+      .then((res) => {
+        if (res.data.message) {
+          $q.notify({
+            message: res.data.message + " dans la table enseignant",
+            icon: "man",
+            iconColor: "white",
+            iconSize: 200,
+          });
+        } else {
+          enseignantStore.setState(res.data.response);
+        }
+      });
     //get cours
-    axios.get("http://localhost/chris/cours/all/").then((res) => {
-      if (res.data.message) {
-        $q.notify({
-          message: res.data.message + " dans la table cours",
-          icon: "book",
-          iconColor: "white",
-          iconSize: 200,
-        });
-      } else {
-        coursStore.setState(res.data.response);
-      }
-    });
+    axios
+      .get("https://gestpresence.000webhostapp.com/chris/cours/all/")
+      .then((res) => {
+        if (res.data.message) {
+          $q.notify({
+            message: res.data.message + " dans la table cours",
+            icon: "book",
+            iconColor: "white",
+            iconSize: 200,
+          });
+        } else {
+          coursStore.setState(res.data.response);
+        }
+      });
     //get surveillant
-    axios.get("http://localhost/chris/surveillant/all/").then((res) => {
-      if (res.data.message) {
-        $q.notify({
-          message: res.data.message + " dans la table surveillant",
-          icon: "book",
-          iconColor: "white",
-          iconSize: 200,
-        });
-      } else {
-        survStore.setState(res.data.response);
-      }
-    });
+    axios
+      .get("https://gestpresence.000webhostapp.com/chris/surveillant/all/")
+      .then((res) => {
+        if (res.data.message) {
+          $q.notify({
+            message: res.data.message + " dans la table surveillant",
+            icon: "book",
+            iconColor: "white",
+            iconSize: 200,
+          });
+        } else {
+          survStore.setState(res.data.response);
+        }
+      });
   },
   created() {},
   components: { dashComponent },

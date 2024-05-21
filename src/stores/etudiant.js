@@ -19,7 +19,10 @@ export const useEtudiant = defineStore("etudiant", {
       //photo
       f.append("id_promotion", s.id_promotion);
       f.append("pass", "1234");
-      let data = await axios.post("http://localhost/chris/etudiant/insert/", f);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/etudiant/insert/",
+        f
+      );
       console.log(data.data);
       return data.data;
     },

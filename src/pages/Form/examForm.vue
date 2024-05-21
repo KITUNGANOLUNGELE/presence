@@ -49,7 +49,7 @@ export default defineComponent({
   name: "examForm",
   beforeCreate() {
     // const enseignement = useEnseignement();
-    // axios.get("http://localhost/chris/enseignement/all/").then((res) => {
+    // axios.get("https://gestpresence.000webhostapp.com/chris/enseignement/all/").then((res) => {
     //   if (res.data.message) {
     //   } else {
     //     enseignement.setState(res.data.response);

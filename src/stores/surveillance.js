@@ -15,7 +15,7 @@ export const useSurveillance = defineStore("surllance", {
       f.append("id_examen", s.examen);
       f.append("id_surveillant", s.surveillant);
       let data = await axios.post(
-        "http://localhost/chris/surveillance/insert/",
+        "https://gestpresence.000webhostapp.com/chris/surveillance/insert/",
         f
       );
       return data.data;
@@ -25,7 +25,7 @@ export const useSurveillance = defineStore("surllance", {
       f.append("id_enseignement", s.id_enseignement);
       f.append("id_etudiant", s.id_etudiant);
       let data = await axios.post(
-        "http://localhost/chris/surveillance/surv/",
+        "https://gestpresence.000webhostapp.com/chris/surveillance/surv/",
         f
       );
       return data.data;

@@ -7,7 +7,9 @@ export const useSection = defineStore("section", {
   }),
   getters: {
     async getSection() {
-      const sectionn = await axios.get("http://localhost/chris/section/all/");
+      const sectionn = await axios.get(
+        "https://gestpresence.000webhostapp.com/chris/section/all/"
+      );
       this.section = sectionn.data.response;
       return sectionn.data;
     },
@@ -20,7 +22,7 @@ export const useSection = defineStore("section", {
       let form = new FormData();
       form.append("nom_section", s.nom_section);
       const ajouter = await axios.post(
-        "http://localhost/chris/section/insert/",
+        "https://gestpresence.000webhostapp.com/chris/section/insert/",
         form
       );
       return ajouter.data;

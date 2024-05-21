@@ -20,7 +20,7 @@ export const usePromotion = defineStore("promot", {
       f.append("nom_promotion", s.nom_prom);
       f.append("id_option", s.id_option);
       const ajouter = await axios.post(
-        "http://localhost/chris/promotion/insert/",
+        "https://gestpresence.000webhostapp.com/chris/promotion/insert/",
         f
       );
       return ajouter.data;

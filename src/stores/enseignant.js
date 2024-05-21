@@ -24,7 +24,7 @@ export const useEnseignant = defineStore("enseignant", {
       //photo
       f.append("pass", "1234");
       let data = await axios.post(
-        "http://localhost/chris/enseignant/insert/",
+        "https://gestpresence.000webhostapp.com/chris/enseignant/insert/",
         f
       );
       console.log(data.data);

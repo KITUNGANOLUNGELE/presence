@@ -18,7 +18,7 @@ export const useEnseignement = defineStore("ens", {
       f.append("id_cours", s.cours);
       f.append("id_enseignant", s.enseignant);
       let data = await axios.post(
-        "http://localhost/chris/enseignement/insert/",
+        "https://gestpresence.000webhostapp.com/chris/enseignement/insert/",
         f
       );
       console.log(data.data);
@@ -28,7 +28,7 @@ export const useEnseignement = defineStore("ens", {
       let f = new FormData();
       f.append("id_enseignement", id_enseignement);
       let data = await axios.post(
-        "http://localhost/chris/enseignement/update/ens",
+        "https://gestpresence.000webhostapp.com/chris/enseignement/update/ens",
         f
       );
       return data.data;

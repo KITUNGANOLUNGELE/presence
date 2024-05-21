@@ -77,20 +77,24 @@ export default {
     const cours = useCours();
     let f = new FormData();
     f.append("id_enseignant", localStorage.getItem("userId"));
-    axios.post("http://localhost/chris/cours/ens/term", f).then((res) => {
-      if (res.data.message) {
-        cours.setStateCoursTerm([]);
-      } else {
-        cours.setStateCoursTerm(res.data.response);
-      }
-    });
-    axios.post("http://localhost/chris/cours/ens/nonterm", f).then((res) => {
-      if (res.data.message) {
-        cours.setStateCoursNonTerm([]);
-      } else {
-        cours.setStateCoursNonTerm(res.data.response);
-      }
-    });
+    axios
+      .post("https://gestpresence.000webhostapp.com/chris/cours/ens/term", f)
+      .then((res) => {
+        if (res.data.message) {
+          cours.setStateCoursTerm([]);
+        } else {
+          cours.setStateCoursTerm(res.data.response);
+        }
+      });
+    axios
+      .post("https://gestpresence.000webhostapp.com/chris/cours/ens/nonterm", f)
+      .then((res) => {
+        if (res.data.message) {
+          cours.setStateCoursNonTerm([]);
+        } else {
+          cours.setStateCoursNonTerm(res.data.response);
+        }
+      });
   },
   beforeUpdate() {},
   setup() {

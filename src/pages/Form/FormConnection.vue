@@ -54,38 +54,40 @@ export default defineComponent({
         messageColor: "primary",
         spinnerColor: "blue-4",
       });
-      axios.post("http://192.168.1.66/chris/user/login/", f).then((data) => {
-        if (data.data.role == "su") {
-          localStorage.setItem("user", data.data.response.mai);
-          localStorage.setItem("role", data.data.role);
-          router.replace("/home");
-        } else if (data.data.role == "enseignant") {
-          localStorage.setItem("user", data.data.response.mail);
-          localStorage.setItem("userId", data.data.response.id);
-          localStorage.setItem("role", data.data.role);
-          router.replace("/enseignant");
-        } else if (data.data.role == "etudiant") {
-          localStorage.setItem("user", data.data.response.mail);
-          localStorage.setItem("userId", data.data.response.id);
-          localStorage.setItem("role", data.data.role);
-          localStorage.setItem("id_prom", data.data.response.id_promotion);
-          router.replace("/etudiant_vue");
-        } else if (data.data.role == "surveillant") {
-          localStorage.setItem("user", data.data.response.mail);
-          localStorage.setItem("userId", data.data.response.id);
-          localStorage.setItem("role", data.data.role);
-          router.replace("/surveillant_vue");
-        } else {
-          $q.notify({
-            message: data.data.message,
-            color: "white",
-            textColor: "red",
-            icon: "error",
-            iconColor: "red",
-          });
-        }
-        $q.loading.hide();
-      });
+      axios
+        .post("https://gestpresence.000webhostapp.com/chris/user/login/", f)
+        .then((data) => {
+          if (data.data.role == "su") {
+            localStorage.setItem("user", data.data.response.mai);
+            localStorage.setItem("role", data.data.role);
+            router.replace("/home");
+          } else if (data.data.role == "enseignant") {
+            localStorage.setItem("user", data.data.response.mail);
+            localStorage.setItem("userId", data.data.response.id);
+            localStorage.setItem("role", data.data.role);
+            router.replace("/enseignant");
+          } else if (data.data.role == "etudiant") {
+            localStorage.setItem("user", data.data.response.mail);
+            localStorage.setItem("userId", data.data.response.id);
+            localStorage.setItem("role", data.data.role);
+            localStorage.setItem("id_prom", data.data.response.id_promotion);
+            router.replace("/etudiant_vue");
+          } else if (data.data.role == "surveillant") {
+            localStorage.setItem("user", data.data.response.mail);
+            localStorage.setItem("userId", data.data.response.id);
+            localStorage.setItem("role", data.data.role);
+            router.replace("/surveillant_vue");
+          } else {
+            $q.notify({
+              message: data.data.message,
+              color: "white",
+              textColor: "red",
+              icon: "error",
+              iconColor: "red",
+            });
+          }
+          $q.loading.hide();
+        });
       login.value = "";
       pass.value = "";
     }

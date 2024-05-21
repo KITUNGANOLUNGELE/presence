@@ -34,7 +34,7 @@ export const useCours = defineStore("cours", {
       f.append("volume_horaire", s.volume);
       f.append("id_promotion", s.promotion);
       const ajouter = await axios.post(
-        "http://localhost/chris/cours/insert/",
+        "https://gestpresence.000webhostapp.com/chris/cours/insert/",
         f
       );
       return ajouter.data;
@@ -42,7 +42,10 @@ export const useCours = defineStore("cours", {
     async getCoursEtud(id_etudiant) {
       let f = new FormData();
       f.append("id_etudiant", id_etudiant);
-      let data = await axios.post("http://localhost/chris/cours/etud", f);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/cours/etud",
+        f
+      );
       this.coursEt = data.data.response;
       return data.data.response;
     },
