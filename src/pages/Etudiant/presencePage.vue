@@ -49,7 +49,7 @@
           <p class="error">{{ error }}</p>
 
           <p class="decode-result">
-            Last result: <b>{{ result }}</b>
+            <!-- Last result: <b>{{ result }}</b> -->
           </p>
         </q-card-section>
         <q-card-section>
@@ -84,6 +84,7 @@ import { ref, computed, onMounted, onBeforeMount } from "vue";
 import { useCours } from "../../stores/cours";
 import { useQuasar } from "quasar";
 import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from "vue-qrcode-reader";
+// import { BarcodeDetector } from "@sec-ant/barcode/pure";
 import { Result } from "postcss";
 import { usePresence } from "../../stores/presence";
 export default {
@@ -130,7 +131,7 @@ export default {
     }
 
     /*** select camera ***/
-
+    //ancien
     const selectedDevice = ref(null);
     const devices = ref([]);
 
@@ -263,6 +264,7 @@ export default {
       }
     }
     return {
+      result,
       open,
       onDetect,
       selectedDevice,

@@ -19,18 +19,24 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+    <dashComponent name="Gestion" icon="settings" @click="settings" />
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import sectionForm from "../Form/sectionForm.vue";
 import dashComponent from "../../components/dashComponent.vue";
 export default {
   components: { sectionForm, dashComponent },
   setup() {
     const section = ref(false);
-    return { section };
+    const router = useRouter();
+    const settings = () => {
+      router.push("/section_settings");
+    };
+    return { section, settings };
   },
 };
 </script>

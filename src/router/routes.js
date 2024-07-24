@@ -21,6 +21,16 @@ const routes = [
         component: () => import("pages/admin/dashPage.vue"),
       },
       {
+        path: "/section_settings",
+        name: "section_settings",
+        component: () => import("pages/admin/UserSettingsPage.vue"),
+      },
+      {
+        path: "/etudiant_settings",
+        name: "etudiant_settings",
+        component: () => import("pages/admin/EtudiantSettingsPage.vue"),
+      },
+      {
         path: "/section",
         name: "section",
         component: () => import("pages/admin/sectionPage.vue"),
@@ -83,6 +93,11 @@ const routes = [
         path: "",
         name: "et_exam",
         component: () => import("pages/Etudiant/ExamenPage.vue"),
+      },
+      {
+        path: "",
+        name: "et_param",
+        component: () => import("pages/Etudiant/ParamPage.vue"),
       },
     ],
   },

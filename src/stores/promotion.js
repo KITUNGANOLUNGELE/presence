@@ -15,6 +15,12 @@ export const usePromotion = defineStore("promot", {
     setState(s) {
       this.Promotion = s;
     },
+    async get_all() {
+      let data = await axios.get(
+        "https://gestpresence.000webhostapp.com/chris/promotion/all/"
+      );
+      return data.data;
+    },
     async savePromotion(s) {
       let f = new FormData();
       f.append("nom_promotion", s.nom_prom);
@@ -24,6 +30,25 @@ export const usePromotion = defineStore("promot", {
         f
       );
       return ajouter.data;
+    },
+    async supprimer(s) {
+      let f = new FormData();
+      f.append("id", s.id);
+      const data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/promotion/delete/",
+        f
+      );
+    },
+    async update(s) {
+      let f = new FormData();
+      f.append("id", s.id);
+      f.append("nom_promotion", s.nom);
+      f.append("id_option", s.idOPtion);
+      const data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/promotion/update/",
+        f
+      );
+      console.log(data.data);
     },
   },
 });

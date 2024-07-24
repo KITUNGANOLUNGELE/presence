@@ -14,8 +14,6 @@
           <b>Espace Etudiant</b>
         </q-toolbar-title>
         <q-fab color="white" icon="person" flat direction="down">
-          <q-fab-action color="blue-4" @click="someMethod" icon="mail" />
-          <q-fab-action color="blue-4" @click="someMethod" icon="settings" />
           <q-fab-action color="blue-4" @click="deconnect" icon="logout" />
         </q-fab>
       </q-toolbar>
@@ -56,6 +54,12 @@ let links = [
     title: "Examens",
     link: "et_exam",
     icon: "notifications",
+    caption: "Mes cours",
+  },
+  {
+    title: "Paramètres",
+    link: "et_param",
+    icon: "settings",
     caption: "Mes cours",
   },
   // {

@@ -32,11 +32,9 @@ export default {
   components: { optionForm, dashComponent },
   beforeCreate() {
     const sec = useSection();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/section/all/")
-      .then((res) => {
-        sec.setState(res.data.response);
-      });
+    axios.get("http://localhost:8080/chris/section/all/").then((res) => {
+      sec.setState(res.data.response);
+    });
   },
   updated() {},
   setup() {

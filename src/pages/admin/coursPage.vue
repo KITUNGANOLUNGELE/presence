@@ -97,138 +97,114 @@ export default {
   beforeCreate() {
     //get promotion
     const prom = usePromotion();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/promotion/all/")
-      .then((res) => {
-        if (res.data.message) {
-          prom.setState([]);
-        } else {
-          prom.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/promotion/all/").then((res) => {
+      if (res.data.message) {
+        prom.setState([]);
+      } else {
+        prom.setState(res.data.response);
+      }
+    });
     //get enseignant
     const enseignant = useEnseignant();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/enseignant/all/")
-      .then((res) => {
-        if (res.data.message) {
-          enseignant.setState([]);
-        } else {
-          enseignant.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/enseignant/all/").then((res) => {
+      if (res.data.message) {
+        enseignant.setState([]);
+      } else {
+        enseignant.setState(res.data.response);
+      }
+    });
     //get cours
     const cours = useCours();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/cours/all/")
-      .then((res) => {
-        if (res.data.message) {
-          cours.setState([]);
-        } else {
-          cours.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/cours/all/").then((res) => {
+      if (res.data.message) {
+        cours.setState([]);
+      } else {
+        cours.setState(res.data.response);
+      }
+    });
     //get enseignement
     const enseignement = useEnseignement();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/enseignement/all/")
-      .then((res) => {
-        if (res.data.message) {
-          enseignement.setState([]);
-        } else {
-          enseignement.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/enseignement/all/").then((res) => {
+      if (res.data.message) {
+        enseignement.setState([]);
+      } else {
+        enseignement.setState(res.data.response);
+      }
+    });
     //get surveillant
     const surveillant = useSurveillant();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/surveillant/all/")
-      .then((res) => {
-        if (res.data.message) {
-          surveillant.setState([]);
-        } else {
-          surveillant.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/surveillant/all/").then((res) => {
+      if (res.data.message) {
+        surveillant.setState([]);
+      } else {
+        surveillant.setState(res.data.response);
+      }
+    });
     //get examen
     const ex = useExamen();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/examen/all/")
-      .then((res) => {
-        if (res.data.message) {
-          ex.setState([]);
-        } else {
-          ex.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/examen/all/").then((res) => {
+      if (res.data.message) {
+        ex.setState([]);
+      } else {
+        ex.setState(res.data.response);
+      }
+    });
   },
   beforeUpdate() {
     //get promotion
     const prom = usePromotion();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/promotion/all/")
-      .then((res) => {
-        if (res.data.message) {
-          prom.setState([]);
-        } else {
-          prom.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/promotion/all/").then((res) => {
+      if (res.data.message) {
+        prom.setState([]);
+      } else {
+        prom.setState(res.data.response);
+      }
+    });
     //get enseignant
     const enseignant = useEnseignant();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/enseignant/all/")
-      .then((res) => {
-        if (res.data.message) {
-          enseignant.setState([]);
-        } else {
-          enseignant.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/enseignant/all/").then((res) => {
+      if (res.data.message) {
+        enseignant.setState([]);
+      } else {
+        enseignant.setState(res.data.response);
+      }
+    });
     //get cours
     const cours = useCours();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/cours/all/")
-      .then((res) => {
-        if (res.data.message) {
-          cours.setState([]);
-        } else {
-          cours.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/cours/all/").then((res) => {
+      if (res.data.message) {
+        cours.setState([]);
+      } else {
+        cours.setState(res.data.response);
+      }
+    });
     //get enseignement
     const enseignement = useEnseignement();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/enseignement/all/")
-      .then((res) => {
-        if (res.data.message) {
-          enseignement.setState([]);
-        } else {
-          enseignement.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/enseignement/all/").then((res) => {
+      if (res.data.message) {
+        enseignement.setState([]);
+      } else {
+        enseignement.setState(res.data.response);
+      }
+    });
     //get surveillant
     const surveillant = useSurveillant();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/surveillant/all/")
-      .then((res) => {
-        if (res.data.message) {
-          surveillant.setState([]);
-        } else {
-          surveillant.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/surveillant/all/").then((res) => {
+      if (res.data.message) {
+        surveillant.setState([]);
+      } else {
+        surveillant.setState(res.data.response);
+      }
+    });
     //get examen
     const ex = useExamen();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/examen/all/")
-      .then((res) => {
-        if (res.data.message) {
-          ex.setState([]);
-        } else {
-          ex.setState(res.data.response);
-        }
-      });
+    axios.get("http://localhost:8080/chris/examen/all/").then((res) => {
+      if (res.data.message) {
+        ex.setState([]);
+      } else {
+        ex.setState(res.data.response);
+      }
+    });
   },
   setup() {
     const cours = ref(false);

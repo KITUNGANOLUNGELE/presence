@@ -48,9 +48,7 @@
 
           <p class="error">{{ error }}</p>
 
-          <p class="decode-result">
-            Last result: <b>{{ result }}</b>
-          </p>
+          <p class="decode-result"></p>
         </q-card-section>
         <q-card-section>
           <QrcodeStream

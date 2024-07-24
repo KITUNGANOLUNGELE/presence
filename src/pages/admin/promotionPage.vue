@@ -32,11 +32,9 @@ export default {
   components: { promForm, dashComponent },
   beforeCreate() {
     const optionStore = useOption();
-    axios
-      .get("https://gestpresence.000webhostapp.com/chris/option/all/")
-      .then((res) => {
-        optionStore.setState(res.data.response);
-      });
+    axios.get("http://localhost:8080/chris/option/all/").then((res) => {
+      optionStore.setState(res.data.response);
+    });
   },
   updated() {},
   setup() {
