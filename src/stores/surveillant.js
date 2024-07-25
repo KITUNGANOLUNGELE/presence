@@ -29,5 +29,16 @@ export const useSurveillant = defineStore("surveillant", {
       console.log(data.data);
       return data.data;
     },
+    async GetSurvEt(s) {
+      let f = new FormData();
+      f.append("id_enseignement", s.id_enseignement);
+      f.append("id_etudiant", s.id_etudiant);
+      let data = await axios.post(
+        "https://gestpresence.000webhostapp.com/chris/surveillance/surv/",
+        f
+      );
+      console.log(data.data);
+      return data.data;
+    },
   },
 });

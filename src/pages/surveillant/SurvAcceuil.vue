@@ -173,6 +173,7 @@ export default {
           open.value = false;
           stat.value = true;
           resultD.value = res;
+          console.log(resultD.value);
           console.log(res);
         });
 
