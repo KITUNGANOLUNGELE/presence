@@ -83,7 +83,7 @@ import { useQuasar } from "quasar";
 export default {
   beforeCreate() {
     //get promotion
-    // axios.get("http://localhost:8080/chris/promotion/all/").then((res) => {
+    // axios.get("https://gestpresence.000webhostapp.com/chris/promotion/all/").then((res) => {
     //   if (res.data.message) {
     //     prom.setState([]);
     //   } else {
